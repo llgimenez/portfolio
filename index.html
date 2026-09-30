@@ -157,35 +157,6 @@
     pointer-events: none;
   }
 
-  .avatar-frame{
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 32px;
-    position: relative;
-  }
-
-  .avatar-frame img,
-  .avatar-fallback{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    background-color: var(--secondary);
-    border: 2px solid var(--text);
-    /* Sombra dura deslocada, sem desfoque, como pedido no briefing */
-    box-shadow: 10px 10px 0 var(--shadow-color);
-  }
-
-  .avatar-fallback{
-    display: none; /* só aparece se a imagem "foto-laura.jpg" não existir */
-    align-items: center;
-    justify-content: center;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-
   /* Nome clicável: dispara o confete quando clicado (detalhe divertido) */
   .hero h1{
     font-size: clamp(2.2rem, 6vw, 3.4rem);
@@ -598,11 +569,6 @@
   <header class="hero" id="topo">
     <div class="hero-light" id="hero-light" aria-hidden="true"></div>
 
-    <div class="avatar-frame">
-      <img src="foto-laura.jpg" alt="Foto de Laura Gimenez dos Santos" id="foto-avatar">
-      <div class="avatar-fallback" id="avatar-fallback">LG</div>
-    </div>
-
     <h1 id="nome-clicavel">Laura Gimenez dos Santos</h1>
     <p class="frase">Dando o meu melhor a cada dia, com responsabilidade e criatividade.</p>
     <p class="dica-clique">Clique no meu nome.</p>
@@ -945,19 +911,6 @@
     });
   })();
 
-  /* ------------------------------------------------------------------
-     7) AVATAR: mostra as iniciais "LG" caso a imagem "foto-laura.jpg"
-     ainda não exista na pasta (evita o ícone de imagem quebrada).
-     ------------------------------------------------------------------ */
-  (function(){
-    var foto = document.getElementById('foto-avatar');
-    var reserva = document.getElementById('avatar-fallback');
-
-    foto.addEventListener('error', function(){
-      foto.style.display = 'none';
-      reserva.style.display = 'flex';
-    });
-  })();
 </script>
 
 </body>
