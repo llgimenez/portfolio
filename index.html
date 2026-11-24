@@ -105,14 +105,18 @@
     top: 18px;
     right: 18px;
     z-index: 50;
+      display: inline-flex;
+  align-items: center;
+  height: 40px;
   }
   .nav-aba-senai {
   position: fixed;
   top: 18px;
-  right: 145px;
+  right: 165px;
   z-index: 50;
-  background-color: var(--primary);
-  color: var(--on-primary);
+  line-height: 1.2;
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
   border-color: var(--text);
 }
 
@@ -717,15 +721,42 @@
 
           <!-- Entrega 1: Capa do Meu Álbum
                Clicando na caixa rosa, abre a imagem da capa em uma janela. -->
-          <article class="polaroid card--3">
-            <img class="polaroid-capa-direta" src="https://raw.githubusercontent.com/llgimenez/capa-do-meu-album/main/capa-album.png" alt="Capa do Meu Álbum — Laura Gimenez" />
+                  <!-- Entrega 1: Capa do Meu Álbum -->
+        <article class="polaroid card--2">
+          <img
+            class="polaroid-capa-direta"
+            src="https://raw.githubusercontent.com/llgimenez/capa-do-meu-album/main/capa-album.png"
+            alt="Capa do Meu Álbum — Laura Gimenez"
+          />
+          <div class="polaroid-legenda">
+            <p class="polaroid-numero">Entrega 01/05</p>
+            <h3 class="polaroid-titulo">Capa do Meu Álbum</h3>
+            <p class="polaroid-meta">17/10/2026</p>
+            <p class="polaroid-aprendizado">
+              Identidade visual, paleta e organização pessoal como ponto de partida.
+            </p>
+            <span class="selo">Concluído</span>
+            <br />
+            <a
+              class="polaroid-link"
+              href="https://raw.githubusercontent.com/llgimenez/capa-do-meu-album/main/capa-album.png"
+              target="_blank"
+              rel="noopener"
+            >
+              Acessar capa do álbum
+            </a>
+            <br />
+            <a
+              class="polaroid-link"
+              href="https://github.com/llgimenez/capa-do-meu-album"
+              target="_blank"
+              rel="noopener"
+            >
+              Repositório no GitHub
+            </a>
+          </div>
+        </article>
 
-            <div class="polaroid-legenda">
-              <h3 class="polaroid-titulo">Capa do Meu Álbum</h3>
-              <p class="polaroid-meta">17/10</p>
-              <a class="polaroid-link" href="https://github.com/llgimenez/capa-do-meu-album" target="_blank" rel="noopener">Link da pasta no GitHub</a>
-            </div>
-          </article>
         <!-- Entrega Especial: Mundo SENAI 2026 -->
         <article class="polaroid card--2">
                   <div class="polaroid-foto">Mundo SENAI 2026</div>
