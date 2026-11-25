@@ -128,39 +128,41 @@
 }
 
 .polaroid-capa-direta {
-  width: 215px;
+  width: 190px;
   height: auto;
-  align-self: center;
+  align-self: flex-start !important; /* Sobe a imagem para o topo, ao lado do título */
   object-fit: contain;
-  object-position: center;
+  object-position: top center;
   background-color: #070607;
   border-radius: 6px;
   display: block;
   flex-shrink: 0;
 }
 
+.polaroid--horizontal {
+  align-items: flex-start !important; /* Garante que foto e texto comecem juntos no topo */
+}
 
-    .polaroid--horizontal {
-      flex-direction: row !important;
-      align-items: stretch;
-      gap: 20px;
-    }
-
-   .polaroid--horizontal .polaroid-legenda {
-  padding-top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 8px;
+.polaroid--horizontal .polaroid-legenda {
+  padding-top: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 6px !important;
+  height: auto !important; /* Remove o esticamento que criava o buraco */
 }
 
 .grupo-links-card {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: auto;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  margin-top: 10px !important; /* Sobe os links para ficarem logo abaixo de "Concluído" */
 }
+.entregas-grid {
+  align-items: start !important;
+}
+
 
 
     @media (max-width: 450px) {
