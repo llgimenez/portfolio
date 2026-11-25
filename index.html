@@ -128,13 +128,38 @@
 }
 
 .polaroid-capa-direta {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
+  width: 175px;
+  height: auto;
+  object-fit: cover;
   background-color: #070607;
   border-radius: 4px;
   display: block;
+  flex-shrink: 0;
 }
+
+.polaroid--horizontal {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 18px;
+}
+
+.polaroid--horizontal .polaroid-legenda {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .polaroid--horizontal {
+    flex-direction: column;
+  }
+  .polaroid-capa-direta {
+    width: 100%;
+    height: 200px;
+  }
+}
+
 
   /* ======================================================================
      ESTILO GERAL DE PÍLULA — usado em botões e links de ação
