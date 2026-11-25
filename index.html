@@ -130,50 +130,66 @@
 .polaroid-capa-direta {
   width: 190px;
   height: auto;
-  align-self: flex-start !important; /* Sobe a imagem para o topo, ao lado do título */
+  align-self: flex-start !important;
   object-fit: contain;
-  object-position: top center;
   background-color: #070607;
   border-radius: 6px;
   display: block;
   flex-shrink: 0;
 }
 
+/* Mantém a imagem à esquerda e os textos lado a lado à direita */
 .polaroid--horizontal {
-  align-items: flex-start !important; /* Garante que foto e texto comecem juntos no topo */
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
 }
 
 .polaroid--horizontal .polaroid-legenda {
+  flex: 1 !important;
+  min-width: 0 !important;
   padding-top: 0 !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
   gap: 6px !important;
-  height: auto !important; /* Remove o esticamento que criava o buraco */
+  height: auto !important;
 }
 
 .grupo-links-card {
   display: flex !important;
   flex-direction: column !important;
   gap: 5px !important;
-  margin-top: 10px !important; /* Sobe os links para ficarem logo abaixo de "Concluído" */
+  margin-top: 10px !important;
 }
+
+/* Faz todos os cards (Dashboard, Manifesto, Árvore, Âncora) subirem e encaixarem sem buracos */
 .entregas-grid {
-  align-items: start !important;
+  display: block !important;
+  columns: 2 !important;
+  column-gap: 24px !important;
 }
 
+.entregas-grid .polaroid {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+  display: inline-block !important;
+  width: 100% !important;
+  margin-bottom: 24px !important;
+  box-sizing: border-box !important;
+}
 
-
-    @media (max-width: 450px) {
-      .polaroid--horizontal {
-        flex-direction: column !important;
-      }
-      .polaroid-capa-direta {
-        width: 100%;
-        height: 220px;
-      }
-    }
+/* No celular (tela menor), volta para 1 coluna e empilha a capa do álbum */
+@media (max-width: 768px) {
+  .entregas-grid {
+    columns: 1 !important;
+  }
+  .polaroid--horizontal {
+    flex-direction: column !important;
+  }
+}
 
 
 
