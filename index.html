@@ -138,8 +138,8 @@
 }
 
 .polaroid--horizontal {
-  flex-direction: row;
-  align-items: stretch;
+  flex-direction: row !important;
+  align-items: center;
   gap: 18px;
 }
 
@@ -147,18 +147,20 @@
   padding-top: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   .polaroid--horizontal {
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .polaroid-capa-direta {
     width: 100%;
     height: 200px;
   }
 }
+
 
 
   /* ======================================================================
