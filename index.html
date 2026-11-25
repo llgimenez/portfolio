@@ -127,39 +127,47 @@
   }
 }
 
-.polaroid-capa-direta {
-  width: 175px;
-  height: auto;
-  object-fit: cover;
-  background-color: #070607;
-  border-radius: 4px;
-  display: block;
-  flex-shrink: 0;
-}
+    .polaroid-capa-direta {
+      width: 215px;
+      height: 260px;
+      object-fit: cover;
+      background-color: #070607;
+      border-radius: 6px;
+      display: block;
+      flex-shrink: 0;
+    }
 
-.polaroid--horizontal {
-  flex-direction: row !important;
-  align-items: center;
-  gap: 18px;
-}
+    .polaroid--horizontal {
+      flex-direction: row !important;
+      align-items: stretch;
+      gap: 20px;
+    }
 
-.polaroid--horizontal .polaroid-legenda {
-  padding-top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
+    .polaroid--horizontal .polaroid-legenda {
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
 
-@media (max-width: 450px) {
-  .polaroid--horizontal {
-    flex-direction: column !important;
-  }
-  .polaroid-capa-direta {
-    width: 100%;
-    height: 200px;
-  }
-}
+    .grupo-links-card {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 450px) {
+      .polaroid--horizontal {
+        flex-direction: column !important;
+      }
+      .polaroid-capa-direta {
+        width: 100%;
+        height: 220px;
+      }
+    }
+
 
 
 
