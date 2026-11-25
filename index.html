@@ -700,6 +700,59 @@
 
     .rodape-topo{ flex-direction: column; }
   }
+  /* === AJUSTE FINAL DOS CARDS E COLUNAS === */
+.entregas-grid {
+  display: block !important;
+  columns: 2 !important;
+  column-gap: 24px !important;
+}
+
+.entregas-grid .polaroid,
+.card--1, .card--2, .card--3, .card--4 {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  break-inside: avoid !important;
+  display: inline-block !important;
+  width: 100% !important;
+  margin-bottom: 24px !important;
+  box-sizing: border-box !important;
+}
+
+.polaroid--horizontal {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+}
+
+.polaroid--horizontal .polaroid-legenda {
+  flex: 1 !important;
+  min-width: 0 !important;
+  padding-top: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 6px !important;
+  height: auto !important;
+}
+
+.grupo-links-card {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  margin-top: 10px !important;
+}
+
+@media (max-width: 780px) {
+  .entregas-grid {
+    columns: 1 !important;
+  }
+  .polaroid--horizontal {
+    flex-direction: column !important;
+  }
+}
+
 </style>
 </head>
 <body>
