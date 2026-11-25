@@ -700,26 +700,25 @@
 
     .rodape-topo{ flex-direction: column; }
   }
-  /* === AJUSTE FINAL DOS CARDS E COLUNAS === */
+ /* === AJUSTE FINAL DOS CARDS E COLUNAS === */
 .entregas-grid {
-  display: block !important;
-  columns: 2 !important;
-  column-gap: 24px !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: start !important;
+  gap: 26px !important;
 }
 
-.entregas-grid .polaroid,
-.card--1, .card--2, .card--3, .card--4 {
+.entregas-grid .polaroid {
   grid-column: auto !important;
   grid-row: auto !important;
-  break-inside: avoid !important;
-  display: inline-block !important;
   width: 100% !important;
-  margin-bottom: 24px !important;
-  box-sizing: border-box !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-.polaroid--horizontal {
-  display: flex !important;
+/* Deixa a imagem e a escrita LADO A LADO na Capa do Meu Álbum */
+.polaroid.polaroid--horizontal {
   flex-direction: row !important;
   align-items: flex-start !important;
   gap: 16px !important;
@@ -734,7 +733,6 @@
   align-items: flex-start !important;
   justify-content: flex-start !important;
   gap: 6px !important;
-  height: auto !important;
 }
 
 .grupo-links-card {
@@ -744,16 +742,29 @@
   margin-top: 10px !important;
 }
 
+/* Posiciona cada card na coluna exata que você pediu */
+.entregas-grid .polaroid:nth-child(1) { grid-column: 1 !important; grid-row: 1 !important; } /* Capa do Álbum */
+.entregas-grid .polaroid:nth-child(2) { grid-column: 2 !important; grid-row: 1 !important; } /* Mundo SENAI */
+.entregas-grid .polaroid:nth-child(3) { grid-column: 1 !important; grid-row: 2 !important; } /* Dashboard */
+.entregas-grid .polaroid:nth-child(4) { grid-column: 2 !important; grid-row: 2 !important; } /* Árvore */
+.entregas-grid .polaroid:nth-child(6) { grid-column: 1 !important; grid-row: 3 !important; } /* Manifesto */
+.entregas-grid .polaroid:nth-child(5) { grid-column: 2 !important; grid-row: 3 !important; } /* Âncoras */
+
 @media (max-width: 780px) {
   .entregas-grid {
-    columns: 1 !important;
+    grid-template-columns: 1fr !important;
   }
-  .polaroid--horizontal {
+  .entregas-grid .polaroid {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+  .polaroid.polaroid--horizontal {
     flex-direction: column !important;
   }
 }
-
 </style>
+
+
 </head>
 <body>
 
