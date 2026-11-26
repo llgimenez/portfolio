@@ -701,24 +701,23 @@
 
     .rodape-topo{ flex-direction: column; }
   }
- /* === AJUSTE FINAL DOS CARDS E COLUNAS === */
+/* === AJUSTE FINAL DOS CARDS E COLUNAS === */
 .entregas-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  align-items: start !important;
-  gap: 26px !important;
+  display: block !important;
+  columns: 2 !important;
+  column-gap: 26px !important;
 }
 
 .entregas-grid .polaroid {
-  grid-column: auto !important;
-  grid-row: auto !important;
-  width: 100% !important;
-  margin: 0 !important;
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
   display: flex !important;
   flex-direction: column !important;
+  width: 100% !important;
+  margin: 0 0 26px 0 !important;
 }
 
-/* Deixa a imagem e a escrita LADO A LADO na Capa do Meu Álbum */
+/* Deixa a imagem e a escrita lado a lado na Capa do Meu Álbum (no PC) */
 .polaroid.polaroid--horizontal {
   flex-direction: row !important;
   align-items: flex-start !important;
@@ -732,7 +731,6 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  justify-content: flex-start !important;
   gap: 6px !important;
 }
 
@@ -743,26 +741,23 @@
   margin-top: 10px !important;
 }
 
-/* Posiciona cada card na coluna exata que você pediu */
-.entregas-grid .polaroid:nth-child(1) { grid-column: 1 !important; grid-row: 1 !important; } /* Capa do Álbum */
-.entregas-grid .polaroid:nth-child(2) { grid-column: 2 !important; grid-row: 1 !important; } /* Mundo SENAI */
-.entregas-grid .polaroid:nth-child(3) { grid-column: 1 !important; grid-row: 2 !important; } /* Dashboard */
-.entregas-grid .polaroid:nth-child(4) { grid-column: 2 !important; grid-row: 2 !important; } /* Árvore */
-.entregas-grid .polaroid:nth-child(6) { grid-column: 1 !important; grid-row: 3 !important; } /* Manifesto */
-.entregas-grid .polaroid:nth-child(5) { grid-column: 2 !important; grid-row: 3 !important; } /* Âncoras */
-
+/* === AJUSTE PARA CELULAR === */
 @media (max-width: 780px) {
   .entregas-grid {
-    grid-template-columns: 1fr !important;
+    columns: 1 !important;
   }
-  .entregas-grid .polaroid {
-    grid-column: 1 !important;
-    grid-row: auto !important;
-  }
+
   .polaroid.polaroid--horizontal {
     flex-direction: column !important;
   }
+
+  .polaroid-capa-direta {
+    width: 100% !important;
+    max-width: 240px !important;
+    margin: 0 auto !important;
+  }
 }
+
 </style>
 
 
